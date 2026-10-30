@@ -18,31 +18,15 @@ The implementation involved DNS configuration, network connectivity troubleshoot
 - Windows Certificate Store & Task Scheduler
 - PowerShell
 
+
 ## Architecture
 
-```text
-Remote Tablet Client
-        |
-        | HTTPS / TCP 443
-        v
-Public API Hostname
-        |
-        | DNS resolution
-        v
-Public IPv4 Address
-        |
-        v
-MikroTik Firewall / NAT
-        |
-        v
-Windows Server / IIS
-        |
-        v
-HR Web API
-        |
-        v
-ERP / Internal Backend
-```
+The following diagram illustrates the HR Web API deployment, including the external HTTPS communication flow and the automated TLS certificate renewal process.
+
+![HR Web API Deployment Architecture](diagrams/architecture.png)
+
+*Sanitized architecture diagram. Production infrastructure identifiers have been replaced with placeholders.*
+  
 
 Cloudflare was configured as DNS Only, allowing clients to establish TLS connections directly with the IIS-hosted API.
 
